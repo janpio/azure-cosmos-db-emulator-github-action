@@ -2,7 +2,7 @@ name: 'Test'
 on: [pull_request, push]
 
 jobs:
-  test:
+  cosmos:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
@@ -11,6 +11,10 @@ jobs:
         run: npm ci
       - name: 'npm run test-cosmos'
         run: npm run test-cosmos
+  mongo:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
       - uses: ./
         with:
           parameter_string: "-EnableMongoDb 4.0"
