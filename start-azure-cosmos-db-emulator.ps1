@@ -3,3 +3,4 @@ Import-Module "$env:ProgramFiles\Azure Cosmos DB Emulator\PSModules\Microsoft.Az
 # https://stackoverflow.com/a/51544284
 $params = "$($args -join " ")"
 Invoke-Expression "Start-CosmosDbEmulator $params"
+Write-Host "Done."
