@@ -7,8 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./
-      - name: 'npm ci'
-        run: npm ci
+      - run: npm ci
       - name: 'npm run test-cosmos'
         run: npm run test-cosmos
   mongo:
@@ -18,5 +17,6 @@ jobs:
       - uses: ./
         with:
           parameter_string: "-EnableMongoDb 4.0"
+      - run: npm ci
       - name: 'npm run test-mongo'
         run: npm run test-mongo
