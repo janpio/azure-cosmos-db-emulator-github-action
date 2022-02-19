@@ -12,5 +12,8 @@ inputs:
 runs:
   using: "composite"
   steps:
+    # Apply patch to cmdlet so needed parameters are available
+    - run: patch patch/psm1.patch
+      shell: bash
     - run: ./start-azure-cosmos-db-emulator.ps1
       shell: pwsh
