@@ -17,5 +17,5 @@ runs:
       shell: bash
     - run: ls -l "C:/Program Files/Azure Cosmos DB Emulator/PSModules/Microsoft.Azure.CosmosDB.Emulator/"
       shell: bash
-    - run: ./start-azure-cosmos-db-emulator.ps1
+    - run: ./start-azure-cosmos-db-emulator.ps1 ${{inputs.parameter_string}}
       shell: pwsh
