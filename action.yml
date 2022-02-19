@@ -1,9 +1,16 @@
 name: 'Azure Cosmos DB Emulator'
 description: 'Runs the Cosmos DB emulator. Only works on `windows-latest`'
-author: 'Steve Faulkner <southpolesteve@gmail.com>'
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
+author: 'Jan Piotrowski <piotrowski@gmail.com>'
 branding:
   icon: 'database'
   color: 'blue'
+inputs:
+  parameter_string:
+    description: Start-CosmosDbEmulator cmdlet parameters
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - run: start-azure-cosmos-db-emulator.ps1
+      shell: pwsh

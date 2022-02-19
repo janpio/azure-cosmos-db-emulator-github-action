@@ -1,12 +1,14 @@
-name: 'PR Checks'
+name: 'Test'
 on: [pull_request, push]
 
 jobs:
-  check_pr:
+  test:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
       - uses: ./
+        with:
+          parameter_string: "-EnableMongoDb 4.0"
       - name: 'npm ci'
         run: npm ci
       - name: 'npm run test'

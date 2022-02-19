@@ -1,29 +1,17 @@
 {
-  "name": "azure-cosmos-github-action",
-  "version": "0.0.0",
+  "name": "azure-cosmos-db-emulator-github-action",
+  "version": "0.0.1",
   "private": true,
-  "description": "Download and run the Azure Cosmos emulator",
+  "description": "DRun the Azure Cosmos DB emulator",
   "main": "index.js",
   "scripts": {
-    "test": "node index.test.js",
-    "package": "ncc build index.js -o dist"
+    "test": "node index.test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/actions/javascript-template.git"
-  },
-  "keywords": [
-    "actions",
-    "node",
-    "setup"
-  ],
-  "author": "YourNameOrOrganization",
+  "author": "Jan Piotrowski",
   "license": "MIT",
   "dependencies": {
-    "@actions/exec": "1.0.1"
   },
   "devDependencies": {
-    "@azure/cosmos": "3.5.1",
-    "@zeit/ncc": "0.20.5"
+    "@azure/cosmos": "3.5.1"
   }
 }
