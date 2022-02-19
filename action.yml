@@ -15,5 +15,7 @@ runs:
     # Apply patch to cmdlet so needed parameters are available
     - run: patch patch/psm1.patch
       shell: bash
+    - run: ls -l "C:/Program Files/Azure Cosmos DB Emulator/PSModules/Microsoft.Azure.CosmosDB.Emulator/"
+      shell: bash
     - run: ./start-azure-cosmos-db-emulator.ps1
       shell: pwsh
