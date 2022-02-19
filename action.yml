@@ -12,5 +12,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: start-azure-cosmos-db-emulator.ps1
+    - run: ./start-azure-cosmos-db-emulator.ps1
       shell: pwsh
