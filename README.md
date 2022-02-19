@@ -1,19 +1,15 @@
 # Azure Cosmos DB Emulator Github Action
 
-The Azure Cosmost DB Emulator [is already installed on GitHub Actions Virtual Environments for Windows](https://github.com/actions/virtual-environments/tree/main/images/win), so this action only needs to start it.
+This GitHub Action starts the Azure Cosmos DB Emulator [that is already installed on GitHub Actions Virtual Environments for Windows](https://github.com/actions/virtual-environments/tree/main/images/win). As the Emulator is only installed on Windows Virtual Environments, it only works there.
 
-## Getting Started
-
-🚨🚨 This only works on windows 🚨🚨
-
-Example usage:
+## Example usage
 
 ```
 jobs:
-  check_pr:
+  emulator:
     runs-on: windows-latest
     steps:
-      - uses: southpolesteve/cosmos-emulator-github-action@v1
+      - uses: janpio/cosmos-emulator-github-action@main
       - name: 'npm ci'
         run: npm ci
       - name: 'npm test'
