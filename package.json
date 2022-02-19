@@ -5,11 +5,13 @@
   "description": "DRun the Azure Cosmos DB emulator",
   "main": "index.js",
   "scripts": {
-    "test": "node index.test.js"
+    "test-cosmos": "node cosmos.test.js",
+    "test-mongo": "node mongo.test.js"
   },
   "author": "Jan Piotrowski",
   "license": "MIT",
   "dependencies": {
+    "mongodb": "^4.4.0"
   },
   "devDependencies": {
     "@azure/cosmos": "3.5.1"

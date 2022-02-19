@@ -7,9 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./
-        with:
-          parameter_string: "-EnableMongoDb 4.0"
       - name: 'npm ci'
         run: npm ci
-      - name: 'npm run test'
-        run: npm run test
+      - name: 'npm run test-cosmos'
+        run: npm run test-cosmos
+      - uses: ./
+        with:
+          parameter_string: "-EnableMongoDb 4.0"
+      - name: 'npm run test-mongo'
+        run: npm run test-mongo
