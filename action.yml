@@ -1,9 +1,21 @@
 name: 'Azure Cosmos DB Emulator'
 description: 'Runs the Cosmos DB emulator. Only works on `windows-latest`'
-author: 'Steve Faulkner <southpolesteve@gmail.com>'
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
+author: 'Jan Piotrowski <piotrowski@gmail.com>'
 branding:
   icon: 'database'
   color: 'blue'
+inputs:
+  parameter_string:
+    description: Start-CosmosDbEmulator cmdlet parameters
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    # Apply patch to cmdlet so needed parameters are available
+    - run: patch "C:/Program Files/Azure Cosmos DB Emulator/PSModules/Microsoft.Azure.CosmosDB.Emulator/Microsoft.Azure.CosmosDB.Emulator.psm1" < patch/psm1.patch || true
+      shell: bash
+    - run: ls -l "C:/Program Files/Azure Cosmos DB Emulator/PSModules/Microsoft.Azure.CosmosDB.Emulator/"
+      shell: bash
+    - run: ./start-azure-cosmos-db-emulator.ps1 ${{inputs.parameter_string}}
+      shell: pwsh

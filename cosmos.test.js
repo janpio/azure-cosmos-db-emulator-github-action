@@ -11,6 +11,7 @@ async function test() {
   })
 
   const response = await client.getDatabaseAccount()
+  console.log(response)
   assert(response)
   const { resources } = await client.databases.readAll().fetchAll()
   assert(resources.length === 0)

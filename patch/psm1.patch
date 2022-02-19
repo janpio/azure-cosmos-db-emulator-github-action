@@ -1,0 +1,15 @@
+--- C:/Program Files/Azure Cosmos DB Emulator/PSModules/Microsoft.Azure.CosmosDB.Emulator/Microsoft.Azure.CosmosDB.Emulator.psm1	Wed Jan 19 00:57:24 2022
++++ C:/Users/Jan/Desktop/Microsoft.Azure.CosmosDB.Emulator.psm1	Sat Feb 19 19:41:26 2022
+@@ -399,3 +399,4 @@
+         [Parameter(Mandatory = $false)]
+-        [switch]
++        [ValidateNotNullOrEmpty()]
++        [string]
+         $EnableMongoDb,
+@@ -550,4 +551,4 @@
+ 
+-    if ($EnableMongoDb) {
+-        $argumentList += , "/enablemongodbendpoint"
++    if (-not [string]::IsNullOrWhitespace($EnableMongoDb)) {
++        $argumentList += "/EnableMongoDbEndpoint=`"$EnableMongoDb`""
+     }
