@@ -1,5 +1,5 @@
 name: 'Azure Cosmos DB Emulator'
-description: 'Runs the Cosmos DB emulator. Only works on `windows-latest`'
+description: 'Starts the Azure Cosmos DB emulator. Only works on `windows-*`'
 author: 'Jan Piotrowski <piotrowski@gmail.com>'
 branding:
   icon: 'database'

@@ -2,8 +2,7 @@
   "name": "azure-cosmos-db-emulator-github-action",
   "version": "0.0.1",
   "private": true,
-  "description": "Run the Azure Cosmos DB emulator",
-  "main": "index.js",
+  "description": "Starts the Azure Cosmos DB emulator on GitHub Actions. Only works on `windows-*`",
   "scripts": {
     "test-cosmos": "node cosmos.test.js",
     "test-mongo": "node mongo.test.js"
