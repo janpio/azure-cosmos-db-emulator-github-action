@@ -37,3 +37,6 @@ jobs:
         run: npm test
 ```
 
+## Thanks
+
+This action is built on a fork of an [older action](https://github.com/southpolesteve/cosmos-emulator-github-action) by [Steve Faulkner](https://github.com/southpolesteve). Thanks for the inspiration.
